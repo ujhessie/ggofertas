@@ -1,0 +1,52 @@
+@import "../../css/variables";
+
+img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.swiper {
+    overflow: visible;
+    width: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+}
+
+.swiper-button-next {
+    // display: none;
+    transform: translateX(10px);
+    overflow: visible;
+    opacity: 0.7;
+    box-shadow: 0px 0px 10px black;
+    
+    
+    
+    &::after {
+        background-color: $cor_principal;
+        border-radius: 10px;
+        color: white;
+        font-size: 3rem;
+        padding: 10px;
+    }
+}
+
+.swiper-button-prev {
+    // display: none;
+    transform: translateX(-10px);
+    overflow: visible;
+    opacity: 0.7;
+    box-shadow: 0px 0px 10px black;
+    
+    
+    &::after {
+        background-color: $cor_principal;
+        border-radius: 10px;
+        color: white;
+        font-size: 3rem;
+        padding: 10px;
+    }
+}
+

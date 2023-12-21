@@ -1,0 +1,26 @@
+@import '../../css/_variables.scss';
+@import '../../css/mixins.scss';
+
+#buttonBack {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: $cor_fonte_branca;
+    background-color: $cor_bg_black;
+    border: 1px solid $cor_fonte_branca;
+    font-weight: 600;
+    z-index: 1000;
+    transition: 300ms;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.295);
+    opacity: 0.5;
+    scale: 1.3;
+
+    &:hover {
+        background-color: $cor_principal;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,61 @@
+@import "../../css/variables";
+@import "../../css/mixins.scss";
+
+#secProjetos {
+  background-color: $cor_bg_black;
+  .tags {
+    display: none;
+  }
+
+  h2 {
+    color: $cor_fonte_branca;
+    text-align: center;
+  }
+
+  .container {
+    background-color: $cor_bg_black_fraca;
+
+
+    .ver-mais-projetos {
+      min-height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: $cor_fonte_branca;
+      font-weight: 600;
+      background-color: $cor_principal;
+      border-radius: $border_radius_padrao;
+      transition: 200ms;
+      padding: 20px;
+
+      &:hover {
+        background-color: $cor_fonte_branca;
+        color: $cor_fonte_preta;
+      }
+
+      h3 {
+        margin: 0;
+      }
+
+      .icon {
+        font-size: 3rem;
+        transform: translateY(10%);
+        margin-left: 10px;
+      }
+    }
+
+  }
+
+  @media (max-width: $breakpoint_tablet) {
+    .container {
+      
+      .botao-todos-projetos {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+  }
+
+}

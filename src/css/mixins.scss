@@ -1,0 +1,63 @@
+@import './variables';
+
+@mixin fonte_corpo($cor) {
+    opacity: 0.8;
+    color: $cor;
+}
+
+@mixin a_button-1() {
+    background-color: $cor_principal;
+    color: $cor_fonte_branca;
+    border: 3px solid transparent;
+    opacity: 1;
+    transition: 300ms;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+
+
+    &:hover {
+        background-color: $cor_fonte_branca;
+        color: $cor_fonte_preta;
+        border: 3px solid $cor_principal;
+    }
+}
+
+@mixin a_button-2() {
+    @include a_button-1;
+    color: $cor_fonte_branca;
+    background-color: transparent;
+    border: 3px solid $cor_principal;
+
+    &:hover {
+        background-color: $cor_principal;
+        color: $cor_fonte_branca;
+    }
+}
+
+@mixin borda_destaque() {
+    border: 4px solid $cor_bg_black;
+    transition: 200ms ease-in-out;
+    &:hover {
+        border: 4px solid $cor_principal;
+    }
+}
+
+
+
+// Mixins de breakpoints
+@mixin bp_tablet {
+    @media (max-width: $breakpoint_tablet) {
+        @content
+    }
+};
+
+@mixin bp_mobile {
+    @media (max-width: $breakpoint_mobile) {
+        @content
+    }
+}
+

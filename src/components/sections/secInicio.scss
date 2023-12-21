@@ -1,0 +1,190 @@
+@import "../../css/variables";
+@import "../../css/mixins.scss";
+
+#secInicio {
+  background-color: $cor_bg_black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  padding-top: 90px;
+  margin-top: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  color: $cor_fonte_branca;
+  box-shadow: inset 40vw -300px 200px $cor_bg_black;
+
+  .container {
+    background-color: $cor_bg_black_fraca;
+  }
+
+  .div-flex {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .div-text {
+      padding-top: 20px;
+      width: 60%;
+      h1 {
+        text-align: start;
+      }
+      .span-bem-vindo {
+        color: $cor_fonte_branca;
+        background-color: $cor_principal;
+        border-radius: 5px;
+        font-weight: 500;
+        padding: 5px 8px;
+        display: inline-block;
+        margin-bottom: 1.2rem;
+      }
+      /* Estilo para a animação da máquina de escrever */
+      .profissoes {
+        display: inline-block;
+        color: $cor_principal;
+        font-weight: 800;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 5s steps(29, end);
+        margin-bottom: 20px;
+      }
+
+      /* Animação da máquina de escrever */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 30ch;
+        }
+      }
+
+      .div-redes-sociais {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 20px;
+
+        a {
+          font-size: 5rem;
+          display: flex;
+          height: 50px;
+          aspect-ratio: 1/1;
+          color: $cor_fonte_branca;
+          transition: 200ms;
+          background-color: $cor_principal_fraca;
+          border-radius: 10px;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            color: $cor_principal;
+          }
+
+          .icon {
+            font-size: 70%;
+          }
+        }
+      }
+
+      .div-botoes {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+
+        a {
+          @include a_button-1;
+        }
+      }
+    }
+
+    .div-img {
+      width: 40%;
+      aspect-ratio: 4/3;
+      position: relative;
+
+      img {
+        position: absolute;
+        display: block;
+        width: 95%;
+        height: 95%;
+        object-fit: cover;
+        z-index: 200;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .back-i {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        background-color: $cor_principal;
+
+        height: 90%;
+        width: 90%;
+        z-index: 100;
+
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .role-pagina {
+    @include fonte_corpo($cor_fonte_branca);
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    .icon {
+      font-size: 3rem;
+    }
+  }
+
+  @include bp_mobile {
+    .div-flex {
+      flex-direction: column-reverse;
+      .div-img {
+        width: 100%;
+        aspect-ratio: 21/9;
+
+        img {
+          width: 100%;
+        }
+        .back-i {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+      }
+
+      .div-text {
+        h1 {
+          text-align: center;
+        }
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+
+        .div-botoes {
+          justify-content: center;
+        }
+        .div-redes-sociais {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

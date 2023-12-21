@@ -1,0 +1,106 @@
+@import "../../css/variables";
+@import "../../css/mixins.scss";
+
+#secSobre {
+  .container {
+    background-color: $cor_bg_black_fraca;
+
+    // Cabeçalho da seção
+    .header-secao {
+      text-align: center;
+
+      span {
+        color: $cor_principal;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        background-color: $cor_principal;
+        padding: 10px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+    }
+
+    // Layout responsivo
+    .div-flex {
+      display: grid;
+      grid-template-columns: 9fr 16fr;
+      gap: 20px;
+
+      @include bp_tablet {
+        grid-template-columns: 3fr 4fr;
+      }
+
+      @include bp_mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .div-img {
+        background-color: $cor_fonte_branca_fraca;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: auto;
+        border-radius: 10px;
+        transition: 300ms;
+
+        img {
+          border-radius: 10px;
+          display: block;
+          object-fit: cover;
+          margin: 0;
+          width: 90%;
+          height: 90%;
+          transition: 300ms;
+
+          @include bp_tablet {
+            aspect-ratio: auto;
+          }
+
+          @include bp_mobile {
+            aspect-ratio: 16/9;
+          }
+        }
+      }
+
+      .div-textos {
+        width: 100%;
+        border-radius: 10px;
+
+        // Cards de texto
+        .cards {
+          display: flex;
+          gap: 10px;
+
+          .card {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 10px;
+            background-color: $cor_fonte_branca;
+          }
+        }
+
+        // Estilos de texto
+        .texto {
+          color: $cor_fonte_branca;
+          font-weight: 600;
+
+          // Estilos de botão responsivos
+          .a-button {
+            @include a_button-2;
+
+            @include bp_mobile {
+              text-align: center;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

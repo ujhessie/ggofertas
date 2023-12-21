@@ -1,0 +1,49 @@
+@import '../../../css/_variables.scss';
+@import '../../../css/mixins.scss';
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 20px 0;
+
+    .tag {
+      display: block;
+      padding: 10px;
+      background-color: $cor_fonte_branca;
+      color: $cor_fonte_preta;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: 200ms;
+      margin: 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $cor_principal;
+        color: $cor_fonte_branca;
+      }
+    }
+
+    @media (max-width:$breakpoint_tablet) {
+      
+    }
+}
+
+.div-projetos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 0px;
+
+  @media (max-width: $breakpoint_tablet) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: $breakpoint_mobile) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
