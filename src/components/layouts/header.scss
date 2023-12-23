@@ -146,11 +146,11 @@ header {
   transition: 200ms;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   img {
     width: 100%;
     margin: 0;
-    transform: translateX(-25px);
     padding: 0;
     background-color: transparent;
     display: block;

@@ -1,6 +1,6 @@
 import { useProdutos } from '../ProdutosContext';
 import CardProduto from '../layouts/CardProduto/CardProduto';
-import "./secProdutos.scss"
+import './secProdutos.scss';
 
 function SecProjetos() {
   const { produtos, loading } = useProdutos();
@@ -9,12 +9,15 @@ function SecProjetos() {
     return <div>Carregando...</div>;
   }
 
+  // Inverte a ordem do array de produtos
+  const produtosInvertidos = produtos.slice().reverse();
+
   return (
     <section id="secProjetos">
       <div className="container">
-        <h2>ALGUNS DOS MELHORES PRODUTOS ADICIONADOS</h2>
+        <h2>Últimos produtos adicionados</h2>
         <div className="div_produtos">
-          {produtos.map((produto) => (
+          {produtosInvertidos.map((produto) => (
             <CardProduto key={produto.id} id={produto.id} />
           ))}
         </div>
