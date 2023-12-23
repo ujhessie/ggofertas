@@ -1,19 +1,38 @@
+// variáveis de cores
+$azulEscuro:#010326;
+$laranja:#F29F05;
+$branco:#F0F8EA;
+$vermelho:#D92E1E;
+$preto:#0D0D0D;
+
+
+
+$cor_fundo_pagina :$branco;
+
 // cores principais e secundárias
-$cor_principal: #9300b7;
-$cor_principal_fraca: #9200b74d;
+$cor_principal: #D92E1E;
+$cor_secudaria:#F29F05;
+
+$cor_fundo_branco:#F0F8EA;
+$cor_fundo_branco_fraco:#f0f8ea80;
+$cor_fundo_preto:#0D0D0D;
+$cor_fundo_preto_fraco:#272727;
+
+$cor_fonte_branca:#F0F8EA;
+$cor_fonte_preta:#0D0D0D;
 
 // variaveis de fontes
 $fonte_titulos: 'Montserrat', sans-serif;
-$fonte_corpo: 'Raleway', sans-serif;
+$fonte_corpo: 'Montserrat', sans-serif;
 
 // variaveis de cores: fontes
-$cor_fonte_branca: #f7f7f7;
-$cor_fonte_branca_fraca: #a4a4a4; 
-$cor_fonte_preta: #1d1d1d;
-$cor_fonte_preta_fraca: #160700;
+
+
+
+
 
 // variaveis de cores: backgrounds
-$cor_bg_black: #1D1D1D;
+
 $cor_bg_black_fraca: #272727;
 
 // variaveis de breakpoints
@@ -22,7 +41,7 @@ $breakpoint_tablet: 900px;
 $breakpoint_desktop: 1024px;
 
 // larguras máximas
-$larg_max_components: 1200px;
+$larg_max_components: 1400px;
 
 // variaveis de border radius
 $border_radius_padrao: 10px;

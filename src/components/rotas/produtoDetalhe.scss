@@ -1,0 +1,127 @@
+/* Importações */
+@import "../../css/variables";
+@import "../../css/mixins";
+
+/* Estilo para #secDetalhesProjetos */
+#secDetalhesProjetos {
+  margin-top: 0px;
+  background-color: $cor_fundo_preto;
+  color: $cor_fonte_branca;
+
+  .container {
+    background-color: $cor_fundo_preto_fraco;
+    margin-top: 80px;
+
+
+    .div-flex {
+      display: grid ;
+      grid-template-columns: 3fr 4fr;
+      gap: 20px;
+
+      .div-img {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        aspect-ratio: 1/1;
+
+        img {
+          display: block;
+          margin: 0;
+          width: 100%;
+        }
+
+      }
+
+      .div-text {
+        overflow-y: scroll;
+        aspect-ratio: 4/3;
+        .valores {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          p {
+            display: inline-block;
+            margin: 0;
+          }
+
+          .valor {
+            background-color: $cor_principal;
+            color: $cor_fonte_branca;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.8rem
+          }
+          .valorAnterior {
+            text-decoration: line-through;
+            opacity: 0.8;
+          }
+        }
+
+        hr {
+          height: 1px;
+          width: 100%;
+          background-color: white;
+          border-radius: 10px;
+          opacity: 0.8;
+          margin: 20px 0;
+        }
+
+        .descricao {
+          opacity: 0.8;
+        }
+
+        .bcomprar {
+          @include a_button-1;
+          display: inline-block;          
+        }
+
+        .aviso {
+          opacity: 0.5;
+          font-size: 1.2rem;
+        }
+
+        @include bp_tablet {
+          
+          aspect-ratio: 1;
+          .valores {
+            justify-content: left;
+
+            @include bp_mobile {
+              justify-content: center;
+            }
+            .valor {
+              font-size: 1.2rem;
+
+            }
+            .valorAnterior {
+              font-size: 1.1rem;
+            }
+            
+          }
+          .descricao {
+            font-size: 1.2rem;
+          }
+          
+          .bcomprar {
+            font-size: 1.2rem;
+          }
+        }
+        @include bp_mobile {
+          height: auto;
+          aspect-ratio: 1;
+          overflow-y: auto;
+        }
+      }
+
+      @include bp_mobile {
+        text-align: center;
+        grid-template-columns: 1fr;
+
+        
+      }
+    }
+  }
+
+}

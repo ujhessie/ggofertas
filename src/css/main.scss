@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 
 html {
@@ -10,10 +11,29 @@ main {
     position: relative;
     max-width: $larg_max_components;
     margin: 0 auto;
+    .container {
+        margin: 10px;
+        max-width: $larg_max_components;
+        padding: 20px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 30px;
+        // background-color: $cor_bg_black_fraca;  
+    
+        
+        @include bp_tablet {
+            padding: 15px;
+        }
+    
+        
+        @include bp_mobile {
+            padding:10px;
+        }
+    }
 }
 
 body {
-    background-color: $cor_bg_black;
+    background-color: $cor_fundo_preto;
     position: relative;
 }
 
@@ -31,7 +51,7 @@ body {
         width: 2px; 
     }
     &::-webkit-scrollbar-track {
-        background: $cor_bg_black;        /* color of the tracking area */
+        background: $cor_fundo_preto;        /* color of the tracking area */
     }
     &::-webkit-scrollbar-thumb {
         background-color: $cor_fonte_branca;    /* color of the scroll thumb */
@@ -147,22 +167,7 @@ section {
     margin-bottom: 20px;
 }
 
-.container {
-    max-width: $larg_max_components;
-    padding: 35px;
-    width: 100%;
-    overflow: hidden;
-    border-radius: $border_radius_padrao;
-    // background-color: $cor_bg_black_fraca;  
 
-    @media (max-width: $breakpoint_tablet) {
-        padding: 30px;
-    }
-
-    @media (max-width: $breakpoint_mobile) {
-        padding:20px;
-    }
-}
 
 
 .desativado {

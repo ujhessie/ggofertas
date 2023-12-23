@@ -2,7 +2,8 @@
 @import "../../css/mixins.scss";
 
 #secProjetos {
-  background-color: $cor_bg_black;
+  background-color: $cor_fundo_preto;
+  margin-top: 70px;
   .tags {
     display: none;
   }
@@ -14,7 +15,23 @@
 
   .container {
     background-color: $cor_bg_black_fraca;
+    .div_produtos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: min-content; /* Define o tamanho mínimo para as linhas */
+      
+      gap: 10px;
 
+      @include bp_tablet {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include bp_mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+    }
 
     .ver-mais-projetos {
       min-height: 200px;
