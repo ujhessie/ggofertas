@@ -1,37 +1,22 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import "./cardProduto.scss";
+/* eslint-disable */
+import { Link } from 'react-router-dom';
+import { useProdutos } from '../../ProdutosContext'; // Importe o hook useProdutos
+import "./cardProduto.scss"
 
 function CardProduto({ id }) {
-  const [produto, setProduto] = useState(null);
+  const { produtos } = useProdutos();
 
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  async function fetchProdutoData() {
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwfYIKedfiS0qQIpTegwJzY4NnuxX-xbcdibFP-zRnoyLG1JLyCOf9zNT0txPIkF73TFQ/exec');
-      if (!response.ok) {
-        throw new Error('Erro ao buscar dados da API');
-      }
-      const produtos = await response.json();
-      const foundProduto = produtos.find((produto) => produto.id === Number(id));
-      setProduto(foundProduto);
-    } catch (error) {
-      console.error('Erro:', error);
-    }
-  }
-
-  useEffect(() => {
-    fetchProdutoData();
-  }, [id]);
+  const produto = produtos.find((prod) => prod.id === Number(id));
 
   if (!produto) {
     return <div>Produto não encontrado.</div>;
   }
 
   const { id: produtoId, imgs, valor, name } = produto;
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   return (
     <Link to={`/produto/${produtoId}`} className={`card-produto`} onClick={scrollToTop}>
