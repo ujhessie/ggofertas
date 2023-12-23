@@ -22,12 +22,14 @@
         width: 100%;
         overflow: hidden;
         border-radius: 20px;
-        aspect-ratio: 1/1;
+        aspect-ratio: auto;
 
         img {
           display: block;
           margin: 0;
           width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
       }
@@ -84,7 +86,9 @@
 
         @include bp_tablet {
           
-          aspect-ratio: 1;
+          height: auto;
+          aspect-ratio: auto;
+          overflow-y: auto;
           .valores {
             justify-content: left;
 
@@ -110,7 +114,7 @@
         }
         @include bp_mobile {
           height: auto;
-          aspect-ratio: 1;
+          aspect-ratio: auto;
           overflow-y: auto;
         }
       }
