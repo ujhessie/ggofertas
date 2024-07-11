@@ -15,7 +15,7 @@ export const ProdutosProvider = ({ children }) => {
   useEffect(() => {
     async function fetchProdutos() {
       try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbwfYIKedfiS0qQIpTegwJzY4NnuxX-xbcdibFP-zRnoyLG1JLyCOf9zNT0txPIkF73TFQ/exec');
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwtBCDz-Hm9bK3eDOSikPhs_im82N2MIVcUvCUC7YtVj4GoR8Xy2Kti8sqAyiZmpQ8PwQ/exec');
         if (!response.ok) {
           throw new Error('Erro ao buscar dados da API');
         }
